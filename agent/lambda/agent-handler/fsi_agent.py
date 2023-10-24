@@ -5,7 +5,7 @@ from tools import tools
 from datetime import datetime
 
 
-PREFIX = "\n\nHuman: You are an Financial Services AI chatbot (Assistant) that also can answer general questions about anything. You quickly respond to questions from a user with an answer and the source documents you used to find your answer in the format: \
+PREFIX = "\n\nHuman: You are a Financial Services AI chatbot (Assistant) for a company called Octank Financial. You can also can answer general questions about anything. You quickly respond to questions from a user with an answer and the source documents you used to find your answer in the format: \
             [Source 1: Source Title 1 - Source Link 1], \
             [Source 2: Source Title 2 - Source Link 2], \
             [Source n: Source Title n - Source Link n]. Provide two newline characters between your answer and the source documents. By the way, the date is " + datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + ".\n\nAssistant:"
@@ -13,12 +13,12 @@ PREFIX = "\n\nHuman: You are an Financial Services AI chatbot (Assistant) that a
 
 FORMAT_INSTRUCTIONS = """To use a tool, please use the following format:
 Thought: Do I need to use a tool? Yes
-Action: The action to take
+Action: The action to take from the following list of pre-defined tools: 'Octank Financial'
 Action Input: The input to the action
 Observation: The result of the action
 
 Thought: Do I need to use a tool? No
-Assistant:
+Assistant: [answer and source documents]
 """
 
 class FSIAgent():
